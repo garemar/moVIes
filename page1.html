@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500&amp;subset=cyrillic" rel="stylesheet">
+        <title>Moving Pictures</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+        <script type="text/javascript" src="script/index.js"></script>
+        <link type="text/css" rel="stylesheet" href="styles/style.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    </head>
+    <body>
+        <div class="loader"></div>
+        <div class="container-main">
+            <header>
+                <a href="page1.html"><img id="logo" class="logo" src="images/logo.jpg"></a>
+                <a class="button-search" onclick="serch()"><img class="search" src="images/search.png"></a>
+                <input type="text" placeholder="Search for a movie..." class= "input-serch" onkeypress="keyPress(event)">
+                <nav class="nav-menu">
+                    <a href=""><span><i class="fas fa-bars"></i></span></a>
+                </nav>
+            </header>
+            <section class="main">
+                <div class="banner">
+                    <h1>Moving Pictures App</h1>
+                </div>
+                    <aside>
+                        <ul class="menu">
+                            <li class="option">
+                                    <a href="">
+                                        <img src="images/popular.png" class="img-icon">
+                                        <strong>Popular</strong>
+                                    </a>
+                                </li>
+                            <li class="option">
+                                    <a href="">
+                                        <img src="images/top_rated.png" class="img-icon">
+                                        <strong>Top Rated</strong>
+                                    </a>
+                                </li>
+                            <li class="option">
+                                    <a href="">
+                                        <img src="images/upcoming.png" class="img-icon">
+                                        <strong>Upcoming</strong>
+                                    </a>
+                                </li>
+                            <li class="option">
+                                    <a href="">
+                                        <img src="images/now_playing.png" class="img-icon">
+                                        <strong>Now Playing</strong>
+                                    </a>
+                                </li>
+                            </ul>
+                    </aside>
+                </section>
+                
+            
+            <section id="wrapper"class="wrapper">
+                <div id= "popular" class="popular">
+                    <div id="title-section-1" class="content-section-title">
+                        <h2 id="popular-movies" class="title-section">Popular Movies</h2>
+                        <a href="" class="movies-link" onclick= more()>View All →</a>
+                    </div>
+                    <ul id="movies-list-1" class="movies-list"> 
+                        
+                    </ul>    
+                </div>
+                
+                <div id= "top-rated" class="top-rated">
+                    <div id="title-section-2" class="content-section-title">
+                        <h2 id="top-rated-movies" class="title-section">Top Rated Movies</h2>
+                        <a href="" class="movies-link">View All →</a>
+                    </div>
+                    <ul id= "movies-list-2"class="movies-list">
+                        
+                        
+                    </ul>    
+                </div>
+                <div id= "upcoming"class="upcoming">
+                    <div id="title-section-3" class="content-section-title">
+                        <h2 id="upcoming-movies" class="title-section">Upcoming Movies</h2>
+                        <a href="" class="movies-link" >View All →</a>
+                    </div>
+                    <ul id = "movies-list-3"class="movies-list">
+                        
+                    </ul>    
+                </div>
+                <div id="now-playing" class="now-playing">
+                    <div id="title-section-4" class="content-section-title">
+                        <h2 id="now-playing-movies" class="title-section">Now Playing Movies</h2>
+                        <a href="" class="movies-link">View All →</a>
+                    </div>
+                    <ul id="movies-list-4"class="movies-list">
+                        
+                    </ul>    
+                </div>
+                <div class="content-button">
+                        <button class="load-more">LOAD MORE</button>
+                    </div>
+                    <footer></footer>        
+            </section>
+        </div>
+        <script type="text/javascript">
+            $(window).load(function() {
+                $(".loader").fadeOut("slow");
+            });
+            </script>
+    </body>
+</html>

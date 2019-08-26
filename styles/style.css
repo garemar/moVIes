@@ -1,0 +1,300 @@
+@import url(c:\Users\gabri\Documents\ada\moVIes\styles\reset.css);
+body {
+  background-color: white;
+  font-family: "Roboto",sans-serif !important;
+  line-height: 1.6;
+}
+
+body .loader {
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  background: url("../images/bat_flying_by_paci.gif") 50% 50% no-repeat #ede5f8;
+  opacity: .8;
+}
+
+body header {
+  position: fixed;
+  width: 100%;
+  height: 95px;
+  background-color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+body header .search {
+  width: 24px;
+  height: 24px;
+  margin: 32px 0px 32px 48px;
+}
+
+body header input {
+  text-align: left;
+  font-size: 24px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 50%;
+  height: 100%;
+  text-indent: 16px;
+  outline: none;
+  border: none;
+  text-shadow: 10px 8px #ccf, -10px 12px #fcf, -8px -12px #cfc, 12px -5px #fc9;
+  color: #413d3d;
+}
+
+body header .nav-menu {
+  width: 20%;
+  text-align: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: none;
+}
+
+@media only screen and (max-width: 600px) {
+  body header .nav-menu {
+    display: block;
+  }
+}
+
+body header .nav-menu .fa-bars {
+  margin: 32px auto;
+  font-size: 24px;
+  color: grey;
+}
+
+@media only screen and (max-width: 600px) {
+  body .main {
+    position: relative;
+  }
+}
+
+body .main .banner {
+  width: calc(100% - 90px);
+  height: 475px;
+  background-image: url("../images/batman.jpg");
+  background-color: white;
+  float: right;
+}
+
+@media only screen and (max-width: 600px) {
+  body .main .banner {
+    height: 150px;
+    background-image: none;
+  }
+}
+
+body .main .banner h1 {
+  margin: 100px 40px;
+  font-size: 40px;
+  font-weight: bold;
+  text-shadow: 1px 1px #666, 2px 2px #86D6D3, 3px 3px #666, 4px 4px #86D6D3;
+  color: #2F4F4F;
+}
+
+@media only screen and (max-width: 600px) {
+  body .main .banner h1 {
+    display: none;
+  }
+}
+
+body .main aside {
+  margin-top: 95px;
+  width: 90px;
+  background-color: white;
+  position: fixed;
+}
+
+@media only screen and (max-width: 600px) {
+  body .main aside {
+    width: 100%;
+    position: absolute;
+  }
+}
+
+body .main aside .menu {
+  text-align: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media only screen and (max-width: 600px) {
+  body .main aside .menu {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    background-color: #c9c6cf;
+    text-align: center;
+  }
+}
+
+body .main aside .menu .option {
+  color: #0d0d35;
+  background-color: white;
+  font-weight: bold;
+  font-size: 12px;
+  width: 100%;
+  height: 95px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  border-bottom: 0.3px solid grey;
+}
+
+@media only screen and (max-width: 600px) {
+  body .main aside .menu .option {
+    width: 25%;
+    height: 150px;
+    margin: 0;
+    border: 0.3px solid #0e0000;
+  }
+  body .main aside .menu .option:hover {
+    color: #681d1d;
+    background-color: rgba(186, 207, 207, 0.308);
+  }
+}
+
+body .main aside .menu .option .img-icon {
+  width: 24px;
+  margin: 15% 30%;
+  display: block;
+}
+
+@media only screen and (max-width: 600px) {
+  body .main aside .menu .option .img-icon {
+    width: 30%;
+    margin: 16px auto;
+  }
+}
+
+body .main aside .menu .option:hover {
+  color: #000000;
+  background-color: rgba(186, 207, 207, 0.308);
+}
+
+.content-section-title {
+  width: 100%;
+  height: 80px;
+  text-align: baseline;
+  margin-top: 24px;
+}
+
+.content-section-title .title-section {
+  text-align: left;
+  margin-left: 48px;
+  font-size: 24px;
+  font-weight: bold;
+  text-shadow: 1px 1px #666, 2px 2px #86D6D3, 3px 3px #666, 4px 4px #86D6D3;
+  color: #2F4F4F;
+  display: inline-block;
+}
+
+.content-section-title .movies-link {
+  text-align: right;
+  font-size: 16px;
+  margin-left: 85%;
+  font-weight: bold;
+  -webkit-transition: -webkit-transform 0.5s;
+  transition: -webkit-transform 0.5s;
+  transition: transform 0.5s;
+  transition: transform 0.5s, -webkit-transform 0.5s;
+  color: #31223f;
+}
+
+.content-section-title .movies-link:hover {
+  color: #af8a10;
+  text-shadow: #2F4F4F 1px;
+}
+
+.wrapper {
+  width: calc(100% - 90px);
+  float: right;
+  background-color: rgba(186, 207, 207, 0.308);
+}
+
+@media only screen and (max-width: 600px) {
+  .wrapper {
+    width: 100%;
+  }
+}
+
+.wrapper .movies-list {
+  width: 100%;
+  height: 400px;
+  margin: 24 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border-bottom: 0.9px solid #2F4F4F;
+}
+
+.wrapper .movies-list .movies-item {
+  width: 22%;
+  margin: 0 1.5%;
+  height: 75%;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  background-color: rgba(186, 207, 207, 0.308);
+}
+
+.wrapper .movies-list .movies-item .movie-img {
+  width: 100%;
+  -webkit-transition: -webkit-transform 0.5s;
+  transition: -webkit-transform 0.5s;
+  transition: transform 0.5s;
+  transition: transform 0.5s, -webkit-transform 0.5s;
+}
+
+.wrapper .movies-list .movies-item .movie-img:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.wrapper .movies-list .title {
+  margin-top: 32px;
+  color: #505072;
+  text-align: center;
+  font-size: 12px;
+  font-weight: bold;
+  -webkit-transition: -webkit-transform 0.5s;
+  transition: -webkit-transform 0.5s;
+  transition: transform 0.5s;
+  transition: transform 0.5s, -webkit-transform 0.5s;
+}
+
+.wrapper .movies-list .title:hover {
+  color: #acb465;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+/*# sourceMappingURL=style.css.map */

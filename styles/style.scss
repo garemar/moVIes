@@ -1,0 +1,242 @@
+@import "../styles/reset.css";
+
+body{
+   background-color: white;
+   font-family: "Roboto",sans-serif !important;
+   line-height: 1.6;
+   .loader {
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    background: url('../images/bat_flying_by_paci.gif') 50% 50% no-repeat rgb(237, 229, 248);
+    opacity: .8;
+}
+   
+      header{
+        position: fixed;
+        width: 100%;
+        height: 95px;
+        background-color:white;
+        display: flex;
+        flex-direction: row;
+        
+            .search{
+              width: 24px;
+              height: 24px;
+              margin: 32px 0px 32px 48px;
+            }
+            input{
+              text-align: left;
+              font-size: 24px;
+              box-sizing: border-box;
+              width: 50%;
+              height: 100%;
+              text-indent: 16px;
+              outline: none;
+              border: none;
+              text-shadow: 10px 8px #ccf, -10px 12px #fcf, -8px -12px #cfc, 12px -5px #fc9;
+              color: rgb(65, 61, 61);
+              
+              
+            }
+            .nav-menu{
+              width: 20%;
+              text-align: center;
+              align-items: center;
+              display: none;
+              @media only screen and (max-width:600px){
+               display: block;
+                }
+                   .fa-bars{
+                     margin: 32px auto;
+                     font-size: 24px;
+                     color: grey;
+                   }
+              
+            }
+            
+            }
+            .main{
+              @media only screen and (max-width:600px){
+               position: relative;
+              }    
+              
+              
+              .banner{
+                width: calc(100% - 90px);
+                height: 475px;
+                background-image: url("../images/batman.jpg");
+                background-color: white;
+                float: right;
+                @media only screen and (max-width:600px){
+                  height: 150px;
+                  background-image:none;
+                }   
+
+              
+                 h1{
+                   margin: 100px 40px;
+                   font-size: 40px;
+                   font-weight: bold;
+                   text-shadow: 1px 1px #666, 2px 2px #86D6D3, 3px 3px #666, 4px 4px #86D6D3;
+                   color:#2F4F4F;
+                    @media only screen and (max-width:600px){
+                      display:none;
+                      
+                  }
+                 }
+                }
+                 aside{
+                  margin-top: 95px;
+                  width: 90px;
+                  background-color: white;
+                  position:fixed;
+                  @media only screen and (max-width:600px){
+                    width: 100%;
+                    position:absolute;
+                   }
+                  
+                     .menu{
+                        text-align: center;
+                        align-items: center;
+                        @media only screen and (max-width:600px){
+                          width: 100%;
+                           display: flex;
+                                flex-direction: row;
+                                justify-content: space-between;
+                                background-color:rgb(201, 198, 207); 
+                                text-align: center;
+                                
+                         }
+                           .option{
+                              color: rgb(13, 13, 53);
+                              background-color:white;
+                              font-weight: bold;
+                              font-size: 12px;
+                              width: 100%;
+                              height: 95px;
+                              display: flex;
+                              justify-content: center;
+                              align-items: center;
+                              flex-wrap: wrap;
+                              border-bottom: 0.3px solid grey;
+                              @media only screen and (max-width:600px){
+                                width: 25%;
+                                height: 150px;
+                                margin: 0 ;
+                                border: 0.3px solid rgb(14, 0, 0);
+                                &:hover{
+                                  color:rgb(104, 29, 29);
+                                  background-color:hsla(180, 18%, 77%, 0.308);
+                                   }
+                                
+                               }
+                                       .img-icon{
+                                           width: 24px;
+                                           margin:15% 30%;
+                                           display: block;
+                                           @media only screen and (max-width:600px){
+                                            width: 30%;
+                                            margin: 16px auto;
+                                           }
+                                           }
+                                           &:hover{
+                                           color: #000000;
+                                           background-color:  hsla(180, 18%, 77%, 0.308);
+                                            }
+                                        }
+                                    }
+                              }
+                        }
+                  
+                        
+                  }
+                 .content-section-title{
+                          width: 100%;
+                          height: 80px;
+                          text-align: baseline;
+                          margin-top: 24px;
+                          
+                               .title-section{ 
+                                text-align:left;
+                                margin-left: 48px;
+                                font-size: 24px;
+                                font-weight: bold;
+                                text-shadow: 1px 1px #666, 2px 2px #86D6D3, 3px 3px #666, 4px 4px #86D6D3;
+                                color:#2F4F4F;
+                                display: inline-block;
+                               }
+                               .movies-link{
+                                text-align: right;
+                                font-size: 16px;
+                                margin-left: 85%;
+                                font-weight: bold;
+                                transition: transform 0.5s;
+                                color: rgb(49, 34, 63);
+                                
+                                &:hover{
+                                color: rgb(175, 138, 16);
+                                text-shadow: #2F4F4F 1px;
+                          
+                                }
+                                
+                                 
+                               }
+                              }
+                               .wrapper{
+
+                               width: calc(100% - 90px);
+                               float: right;
+                               background-color: hsla(180, 18%, 77%, 0.308);
+                               @media only screen and (max-width:600px){
+                                width: 100%;
+                              
+                                
+                               }
+                               
+                               
+                               .movies-list{
+                                width: 100%;
+                                height: 400px;
+                                margin: 24 auto;
+                                display: flex;
+                                border-bottom: 0.9px solid #2F4F4F;
+                                      .movies-item{
+                                           width: 22%;
+                                           margin: 0 1.5%;
+                                           height: 75%;
+                                           flex-direction: row;
+                                           justify-content: space-between;
+                                           background-color:hsla(180, 18%, 77%, 0.308);
+                                          
+                                                    .movie-img{
+                                                      width: 100%;
+                                                      transition: transform 0.5s;
+                                                      &:hover{
+                                                      transform: scale(1.1);
+                                                    }
+                                                      }
+                                                      
+                                                    }
+                                                        .title{
+                                                         margin-top: 32px; 
+                                                         color: rgb(80, 80, 114);
+                                                         text-align: center;
+                                                         font-size: 12px;
+                                                         font-weight: bold;
+                                                         transition: transform 0.5s;
+                                                         &:hover{
+                                                         color: rgb(172, 180, 101);
+                                                         transform: scale(1.1)
+                                                          
+                                                         }
+                                                         
+                                                        }   
+                                                         
+                   
+                                                   }
+
+                                                   }
