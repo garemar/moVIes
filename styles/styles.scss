@@ -14,6 +14,29 @@ body{
     background: url('../images/bat_flying_by_paci.gif') 50% 50% no-repeat rgb(237, 229, 248);
     opacity: .8;
 }
+.hide {
+  display: none;
+  }
+.margin{
+  padding-top: 140px;
+  
+}
+.title-1{
+  margin: 24px;
+  text-shadow: 1px 1px #666, 2px 2px #86D6D3, 3px 3px #666, 4px 4px #86D6D3;
+  color:#2F4F4F;
+  float: left;
+
+
+}
+
+  .show {
+  padding-top: 50px;
+   }
+
+   .active {
+    display: block;
+   }
    
       header{
         position: fixed;
@@ -68,7 +91,7 @@ body{
               .banner{
                 width: calc(100% - 90px);
                 height: 475px;
-                background-image: url("../images/batman.jpg");
+                background-image: url("../images/assets/batman.jpg");
                 background-color: white;
                 float: right;
                 @media only screen and (max-width:600px){
@@ -154,11 +177,20 @@ body{
                   
                         
                   }
+                  .wrapper{
+
+                    width: calc(100% - 90px);
+                    float: right;
+                    background-color: hsla(180, 18%, 77%, 0.308);
+                    @media only screen and (max-width:600px){
+                     width: 100%;
+                    }
+                          
                  .content-section-title{
                           width: 100%;
                           height: 80px;
                           text-align: baseline;
-                          margin-top: 24px;
+                          margin-top: 24px;    
                           
                                .title-section{ 
                                 text-align:left;
@@ -170,41 +202,30 @@ body{
                                 display: inline-block;
                                }
                                .movies-link{
-                                text-align: right;
+                                text-align: center;
                                 font-size: 16px;
-                                margin-left: 85%;
+                                margin-left: 70%;
+                                margin-right: 8px;
                                 font-weight: bold;
                                 transition: transform 0.5s;
                                 color: rgb(49, 34, 63);
-                                
-                                &:hover{
+                                 &:hover{
                                 color: rgb(175, 138, 16);
                                 text-shadow: #2F4F4F 1px;
-                          
-                                }
+                                       }
+                                       .result{
+                                        padding-left: 4px;
+                                      }
                                 
                                  
                                }
                               }
-                               .wrapper{
-
-                               width: calc(100% - 90px);
-                               float: right;
-                               background-color: hsla(180, 18%, 77%, 0.308);
-                               @media only screen and (max-width:600px){
-                                width: 100%;
-                              
-                                
-                               }
-                               
-                               
-                               .movies-list{
+                              .movies-list{
                                 width: 100%;
                                 height: 400px;
                                 margin: 24 auto;
                                 display: flex;
-                                border-bottom: 0.9px solid #2F4F4F;
-                                      .movies-item{
+                                       .movies-item{
                                            width: 22%;
                                            margin: 0 1.5%;
                                            height: 75%;
@@ -238,5 +259,47 @@ body{
                                                          
                    
                                                    }
+                                                   .btn-more {
+                                                    margin: 2% 40%;
+                                                    padding: 0 16px;
+                                                    border-radius: 2px;
+                                                    background-color: #018786;
+                                                    box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2),
+                                                      0 2px 2px 0 rgba(0, 0, 0, 0.14),
+                                                      0 1px 5px 0 rgba(0, 0, 0, 0.12);
+                                                    color: #fff;
+                                                    transition: background-color 15ms linear,
+                                                      box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1);
+                                                  
+                                                    height: 36px;
+                                                    line-height: 2.25rem;
+                                                    font-family: Roboto, sans-serif;
+                                                    font-size: 0.875rem;
+                                                    font-weight: 500;
+                                                    letter-spacing: 0.06em;
+                                                    text-transform: uppercase;
+                                                  }
+                                                  
+                                                  .btn-more:hover, .btn-more:focus {
+                                                    box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.2),
+                                                      0 4px 5px 0 rgba(0, 0, 0, 0.14),
+                                                      0 1px 10px 0 rgba(0, 0, 0, 0.12);
+                                                    background-color: #159090;
+                                                  }
+                                                  
+                                                  .btn-more:active {
+                                                    box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2),
+                                                      0 8px 10px 1px rgba(0, 0, 0, 0.14),
+                                                      0 3px 14px 2px rgba(0, 0, 0, 0.12);
+                                                    background-color: #61b4b3;
+                                                  }
 
                                                    }
+                                                  
+                                             
+                                                   
+                                              
+                                         
+                                         
+                                  
+                                
