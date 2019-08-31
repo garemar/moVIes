@@ -163,7 +163,16 @@ const title4 = document.getElementById("title-section-4")
 title4.classList.add("hide")
 }
 
-const pop = () => {
+// El problema estaba en la propagación del evento (ver más info sobre como 
+// funcionan el modelo de eventos en 
+// https://developer.mozilla.org/es/docs/Referencia_DOM_de_Gecko/Eventos o 
+// https://es.khanacademy.org/computing/computer-programming/html-css-js/html-js-dom-events/v/making-webpages-interactive-with-events) que al no llamar a 
+// event.preventDefault hacía que el evento se propague llegando a invocar 
+// vuelva a invocar el logo.onclick lo que hacia que se recargue la página.
+// En definitiva solo faltaba el  event.preventDefault(); que agregue en los 
+// otros handlers.
+const pop = (event) => {
+    event.preventDefault();
     clean();
     replaceContP();
     replaceContA();
@@ -171,7 +180,8 @@ const pop = () => {
     replaceContC();
     
 }
-const topR = () => {
+const topR = (event) => {
+    event.preventDefault();
     clean();
     const title1= document.getElementById("title-section-1")
     title1.innerText="Top Rated"
@@ -181,7 +191,8 @@ const topR = () => {
     replaceContRd();
     
 }
-const up = () => {
+const up = (event) => {
+    event.preventDefault();
     clean();
     const title1= document.getElementById("title-section-1")
     title1.innerText="Upcoming"
@@ -191,7 +202,8 @@ const up = () => {
     replaceContUd();
     
 }
-const now = () => {
+const now = (event) => {
+    event.preventDefault();
     clean();
     const title1= document.getElementById("title-section-1")
     title1.innerText="Now Playing"
@@ -237,9 +249,6 @@ const search = () => {
             li.appendChild(titles);
             ul.appendChild(li);
         });
-        
-     
-            
     })
     .catch(error => {
         let li_error = document.createElement("li")
