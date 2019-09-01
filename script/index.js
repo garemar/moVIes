@@ -163,16 +163,7 @@ const title4 = document.getElementById("title-section-4")
 title4.classList.add("hide")
 }
 
-// El problema estaba en la propagación del evento (ver más info sobre como 
-// funcionan el modelo de eventos en 
-// https://developer.mozilla.org/es/docs/Referencia_DOM_de_Gecko/Eventos o 
-// https://es.khanacademy.org/computing/computer-programming/html-css-js/html-js-dom-events/v/making-webpages-interactive-with-events) que al no llamar a 
-// event.preventDefault hacía que el evento se propague llegando a invocar 
-// vuelva a invocar el logo.onclick lo que hacia que se recargue la página.
-// En definitiva solo faltaba el  event.preventDefault(); que agregue en los 
-// otros handlers.
-const pop = (event) => {
-    event.preventDefault();
+const pop = () => {
     clean();
     const h2 = document.getElementById("popular-movies")
     h2.innerText= "Popular Movies"
@@ -184,8 +175,7 @@ const pop = (event) => {
     btn.classList.add("active")
     
 }
-const topR = (event) => {
-    event.preventDefault();
+const topR = () => {
     clean();
     const h2 = document.getElementById("popular-movies")
     h2.innerText= "Top Rated Movies"
@@ -197,8 +187,7 @@ const topR = (event) => {
     btn.classList.add("active")
     
 }
-const up = (event) => {
-    event.preventDefault();
+const up = () => {
     clean();
     const h2 = document.getElementById("popular-movies")
     h2.innerText= "Upcoming Movies"
@@ -209,8 +198,7 @@ const up = (event) => {
     const btn = document.getElementById("more")
     btn.classList.add("active")
 }
-const now = (event) => {
-    event.preventDefault();
+const now = () => {
     clean();
     const title1= document.getElementById("popular-movies")
     title1.innerText="Now Playing Movies"
