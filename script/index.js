@@ -174,44 +174,52 @@ title4.classList.add("hide")
 const pop = (event) => {
     event.preventDefault();
     clean();
+    const h2 = document.getElementById("popular-movies")
+    h2.innerText= "Popular Movies"
     replaceContP();
     replaceContA();
     replaceContB();
     replaceContC();
+    const btn = document.getElementById("more")
+    btn.classList.add("active")
     
 }
 const topR = (event) => {
     event.preventDefault();
     clean();
-    const title1= document.getElementById("title-section-1")
-    title1.innerText="Top Rated"
+    const h2 = document.getElementById("popular-movies")
+    h2.innerText= "Top Rated Movies"
     replaceContRa();
     replaceContRb();
     replaceContRc();
     replaceContRd();
+    const btn = document.getElementById("more")
+    btn.classList.add("active")
     
 }
 const up = (event) => {
     event.preventDefault();
     clean();
-    const title1= document.getElementById("title-section-1")
-    title1.innerText="Upcoming"
+    const h2 = document.getElementById("popular-movies")
+    h2.innerText= "Upcoming Movies"
     replaceContUa();
     replaceContUb();
     replaceContUc();
     replaceContUd();
-    
+    const btn = document.getElementById("more")
+    btn.classList.add("active")
 }
 const now = (event) => {
     event.preventDefault();
     clean();
-    const title1= document.getElementById("title-section-1")
-    title1.innerText="Now Playing"
+    const title1= document.getElementById("popular-movies")
+    title1.innerText="Now Playing Movies"
     replaceContNa();
     replaceContNb();
     replaceContNc();
     replaceContNd();
-    
+    const btn = document.getElementById("more")
+    btn.classList.add("active")
 }
 const search = () => {
     const banner = document.getElementById("banner")

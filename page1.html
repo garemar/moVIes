@@ -6,13 +6,13 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500&amp;subset=cyrillic" rel="stylesheet">
         <title>Moving Pictures</title>
-        <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
         <script type="text/javascript" src="script/index.js"></script>
         <link type="text/css" rel="stylesheet" href="styles/styles.css">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     </head>
     <body onload="home()">
-        <!--<div class="loader"></div>-->
+        <div class="loader"></div>
           <header>
                 <a href="" id="logo"><img id="logo" class="logo" src="images/logo.jpg"></a>
                 <a class="button-search" onclick="search()"><img class="search" src="images/assets/search.png"></a>
@@ -27,6 +27,22 @@
                 </div>
                     <aside>
                         <ul class="menu">
+<<<<<<< HEAD
+                            <li class="option" >
+                                    <a href="#"onclick="pop()" >
+                                        <img src="images/assets/popular.png" class="img-icon">
+                                        <strong id="popular">Popular</strong>
+                                    </a>
+                                </li>
+                            <li class="option"  >
+                                    <a href="#"onclick="topR()">
+                                        <img src="images/assets/top_rated.png" class="img-icon">
+                                        <strong id="top_rated">Top Rated</strong>
+                                    </a>
+                                </li>
+                            <li class="option">
+                                    <a href="#"onclick="up()">
+=======
                             <li class="option" onclick="pop(event)">
                                     <a href="" >
                                         <img src="images/assets/popular.png" class="img-icon" />
@@ -41,12 +57,18 @@
                                 </li>
                             <li class="option"onclick="up(event)">
                                     <a href="">
+>>>>>>> efa9b8238aa3b2b001c2ffa22d707407157d94ac
                                         <img src="images/assets/upcoming.png" class="img-icon">
                                         <strong id="upcoming">Upcoming</strong>
                                     </a>
                                 </li>
+<<<<<<< HEAD
+                            <li class="option">
+                                    <a href="#"onclick="now()">
+=======
                             <li class="option"onclick="now(event)">
                                     <a href="">
+>>>>>>> efa9b8238aa3b2b001c2ffa22d707407157d94ac
                                         <img src="images/assets/now_playing.png" class="img-icon">
                                         <strong id="now_playing">Now Playing</strong>
                                     </a>
@@ -103,6 +125,6 @@
  </div> 
       <footer></footer>
     </section>
-    <!-- <script type="text/javascript">$(window).load(function() { $(".loader").fadeOut("slow"); });</script>-->
+    <script type="text/javascript">$(window).load(function() { $(".loader").fadeOut("slow"); });</script>
     </body>
 </html>
