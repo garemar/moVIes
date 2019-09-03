@@ -1,306 +1,568 @@
 @import "../styles/reset.css";
 
-body{
-   background-color: white;
-   font-family: "Roboto",sans-serif !important;
-   line-height: 1.6;
-   .loader {
-    position: fixed;
-    left: 0px;
-    top: 0px;
-    width: 100%;
-    height: 100%;
-    z-index: 9999;
-    background: url('../images/bat_flying_by_paci.gif') 50% 50% no-repeat rgb(237, 229, 248);
-    opacity: .8;
+ //colors
+$color_0: rgb(201, 198, 207);
+$color_1: rgb(14, 0, 0);
+$color_2: rgb(104, 29, 29);
+$color_3: rgb(186, 207, 207);
+$color_4: rgb(255, 255, 255);
+$color_5: rgb(237, 229, 248);
+$color_6: rgb(102, 102, 102);
+$color_7: rgb(134, 214, 211);
+$color_8: rgb(47, 79, 79);
+$color_9: rgb(204, 204, 255);
+$color_10: rgb(255, 204, 255);
+$color_11: rgb(204, 255, 204);
+$color_12: rgb(255, 204, 153);
+$color_13: rgb(65, 61, 61);
+$color_14: rgb(128, 128, 128);
+$color_15: rgb(13, 13, 53);
+$color_16: rgb(0, 0, 0);
+$color_17: rgb(80, 80, 114);
+$color_18: rgb(110, 9, 102);
+$color_19: rgb(1, 135, 134);
+$color_20: rgb(21, 144, 144);
+$color_21: rgb(97, 180, 179);
+$color_22: rgb(49, 34, 63);
+$color_23: rgb(175, 138, 16);
+$color_24: rgb(172, 180, 101);
+$color_25: rgb(8, 28, 36);
+$color_26: rgb(117, 119, 112);
+$color_27: rgb(218, 115, 20);
+
+//fonts
+$font_0: "Roboto";
+$font_1: "sans-serif !important";
+$font_2: "Roboto";
+$font_3: "sans-serif";
+
+//urls
+$url_0: url("../images/bat_flying_by_paci.gif");
+$url_1: url("../images/assets/batman.jpg");
+
+body {
+	background-color: $color_4;
+	font-family: $font_0, $font_1;
+	line-height: 1.6;
+	.loader {
+		position: fixed;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		z-index: 9999;
+		background: $url_0 50% 50% no-repeat $color_5;
+		opacity: 0.8;
+	}
+	.hide {
+		display: none;
+	}
+	.margin {
+		padding-top: 140px;
+	}
+	.title-1 {
+		margin: 24px;
+		text-shadow: 1px 1px $color_6, 2px 2px $color_7, 3px 3px $color_6, 4px 4px $color_7;
+		color: $color_8;
+		float: left;
+	}
+	.show {
+		padding-top: 50px;
+	}
+	.active {
+		display: block;
+	}
+	header {
+		position: fixed;
+		width: 100%;
+		height: 95px;
+		background-color: $color_4;
+		display: flex;
+		flex-direction: row;
+		.search {
+			width: 24px;
+			height: 24px;
+			margin: 32px 0 32px 48px;
+		}
+		input {
+			text-align: left;
+			font-size: 24px;
+			box-sizing: border-box;
+			width: 50%;
+			height: 100%;
+			text-indent: 16px;
+			outline: none;
+			border: none;
+			text-shadow: 10px 8px $color_9, -10px 12px $color_10, -8px -12px $color_11, 12px -5px $color_12;
+			color: $color_13;
+		}
+		.nav-menu {
+			width: 20%;
+			text-align: center;
+			align-items: center;
+			display: none;
+			.fa-bars {
+				margin: 32px auto;
+				font-size: 24px;
+        color: $color_14;
+        &:hover{
+          .aside{
+            display:block;
+          }
+        }
+			}
+		}
+	}
+	.main {
+		.banner {
+			width: calc(100% - 90px);
+			height: 475px;
+			background-image: $url_1;
+			background-color: $color_4;
+			float: right;
+			h1 {
+				margin: 100px 40px;
+				font-size: 40px;
+				font-weight: bold;
+				text-shadow: 1px 1px $color_6, 2px 2px $color_7, 3px 3px $color_6, 4px 4px $color_7;
+				color: $color_8;
+			}
+		}
+		aside {
+			margin-top: 95px;
+			width: 90px;
+			background-color: $color_4;
+			position: fixed;
+			.menu {
+				text-align: center;
+				align-items: center;
+				.option {
+					color: $color_15;
+					background-color: $color_4;
+					font-weight: bold;
+					font-size: 12px;
+					width: 100%;
+					height: 95px;
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					flex-wrap: wrap;
+					border-bottom: 0.3px solid $color_14;
+					.img-icon {
+						width: 24px;
+						margin: 15% 30%;
+						display: block;
+					}
+					&:hover {
+						color: $color_16;
+						background-color: $color_3;
+					}
+				}
+			}
+		}
+	}
+}
+@media only screen and(max-width: 600px) {
+	body {
+    .header{
+      .input{
+        font-size: 16px;
+      }
+      width: 600px;
+        .input{
+          font-size: 16px;
+        }
+    }
+   .nav-menu {
+     .fa-bars{
+      display: block;
+     }
+     
+      
+		}
+		.main {
+			position: relative;
+			.banner {
+				height: 150px;
+				background-image: none;
+				h1 {
+					display: none;
+				}
+      }
+      
+			aside {
+				width: 100%;
+        position: absolute;
+				.menu {
+					width: 100%;
+					display: flex;
+					flex-direction: row;
+					justify-content: space-between;
+					background-color: $color_0;
+					text-align: center;
+					.option {
+						width: 25%;
+						height: 150px;
+						margin: 0;
+						border: 0.3px solid $color_1;
+						&:hover {
+							color: $color_2;
+              background-color: $color_3;
+              
+						}
+						.img-icon {
+							width: 30%;
+							margin: 16px auto;
+						}
+					}
+				}
+			}
+    }
+    .wrapper {
+      margin:0;
+      width: 100%;
+    }
+    .total {
+      width: 100%;
+      margin-top: 240px;
+    }
+    
+  }
+		
+	}
+	
+.total {
+	width: calc(100% - 90px);
+	float: right;
+	background-color: $color_3;
+	margin-top: 95px;
+	.total-div {
+		height: 24px;
+		display: flex;
+		flex-direction: row;
+		margin: 24px;
+		.title-section {
+			text-align: left;
+			font-size: 20px;
+			font-weight: bold;
+			text-shadow: 1px 1px $color_6, 2px 2px $color_7, 3px 3px $color_6, 4px 4px $color_7;
+			color: $color_8;
+			display: inline-block;
+		}
+		.total-span {
+			color: $color_8;
+			font-size: 16px;
+			padding-top: 8px;
+			margin-left: 70%;
+			font-weight: bold;
+		}
+	}
+	.ul-total {
+		width: 100%;
+		margin: 24 auto;
+		.results-li {
+			width: 200px;
+			height: 280px;
+			margin: 24px;
+			display: inline-block;
+			.movie-img {
+				width: 100%;
+				transition: transform 0.5s;
+				&:hover {
+					transform: scale(1.1);
+				}
+			}
+			.title {
+				margin-top: 24px;
+				color: $color_17;
+				text-align: center;
+				font-size: 10px;
+				font-weight: bold;
+				transition: transform 0.5s;
+				&:hover {
+					color: $color_18;
+					transform: scale(1.3);
+				}
+			}
+		}
+	}
+	.btn-more {
+		margin: 2% 40%;
+		padding: 0 16px;
+		border-radius: 2px;
+		background-color: $color_19;
+		box-shadow: 0 3px 1px -2px $color_16, 0 2px 2px 0 $color_16, 0 1px 5px 0 $color_16;
+		color: $color_4;
+		transition: background-color 15ms linear, box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1);
+		height: 36px;
+		line-height: 2.25rem;
+		font-family: $font_2, $font_3;
+		font-size: 0.875rem;
+		font-weight: 500;
+		letter-spacing: 0.06em;
+		text-transform: uppercase;
+		&:hover {
+			box-shadow: 0 2px 4px -1px $color_16, 0 4px 5px 0 $color_16, 0 1px 10px 0 $color_16;
+			background-color: $color_20;
+		}
+		&:focus {
+			box-shadow: 0 2px 4px -1px $color_16, 0 4px 5px 0 $color_16, 0 1px 10px 0 $color_16;
+			background-color: $color_20;
+		}
+		&:active {
+			box-shadow: 0 5px 5px -3px $color_16, 0 8px 10px 1px $color_16, 0 3px 14px 2px $color_16;
+			background-color: $color_21;
+		}
+	}
+}
+.wrapper {
+	width: calc(100% - 90px);
+	float: right;
+	background-color: $color_3;
+	.content-section-title {
+		width: 100%;
+		height: 80px;
+		text-align: baseline;
+		margin-top: 24px;
+		.title-section {
+			text-align: left;
+			margin-left: 48px;
+			font-size: 24px;
+			font-weight: bold;
+			text-shadow: 1px 1px $color_6, 2px 2px $color_7, 3px 3px $color_6, 4px 4px $color_7;
+			color: $color_8;
+			display: inline-block;
+		}
+		.movies-link {
+			text-align: center;
+			font-size: 16px;
+			margin-left: 70%;
+			margin-right: 8px;
+			font-weight: bold;
+			transition: transform 0.5s;
+			color: $color_22;
+			&:hover {
+				color: $color_23;
+				text-shadow: $color_8 1px;
+			}
+			.result {
+				padding-left: 4px;
+			}
+		}
+	}
+	.movies-list {
+		width: 100%;
+		height: 400px;
+		margin: 24 auto;
+		display: flex;
+		.movies-item {
+			width: 22%;
+			margin: 0 1.5%;
+			height: 75%;
+			flex-direction: row;
+			justify-content: space-between;
+			background-color: $color_3;
+			.movie-img {
+				width: 100%;
+				transition: transform 0.5s;
+				&:hover {
+					transform: scale(1.1);
+				}
+			}
+		}
+		.title {
+			margin-top: 32px;
+			color: $color_17;
+			text-align: center;
+			font-size: 12px;
+			font-weight: bold;
+			transition: transform 0.5s;
+			&:hover {
+				color: $color_24;
+				transform: scale(1.1);
+			}
+		}
+	}
+}
+.modal {
+	width: 100%;
+	height: 100vh;
+	background-color: $color_25;
+	opacity: 0.98;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 2;
+	overflow: auto;
+	.contentModal {
+		width: 768px;
+		height: 700px;
+		position: relative;
+		z-index: 5;
+		background-color: $color_4;
+		margin: 40px auto;
+		.modal-header {
+			height: 350px;
+			position: relative;
+			background-size: cover;
+			background-repeat: no-repeat;
+			background-position: 50% 50%;
+			&:before {
+				content: "";
+				display: block;
+				position: absolute;
+				top: 0;
+				left: 0;
+				z-index: 0;
+				width: 100%;
+				height: 100%;
+				background: $color_25;
+				opacity: 0.85;
+			}
+		}
+		.modal-info {
+			display: flex;
+			flex-direction: row;
+			justify-content: flex-start;
+			align-items: flex-start;
+			flex-wrap: wrap;
+		}
+		.close {
+			width: 40px;
+			height: 40px;
+			display: flex;
+			flex-direction: row;
+			justify-content: center;
+			align-items: center;
+			position: absolute;
+			top: 0;
+			right: 0;
+			cursor: pointer;
+			i {
+				width: 20px;
+				height: 20px;
+				color: $color_4;
+			}
+			&:hover {
+				background-color: $color_26;
+			}
+		}
+		.content-modal-info {
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			top: 0;
+			left: 0;
+			display: flex;
+			flex-direction: row;
+			justify-content: center;
+			align-items: center;
+			box-sizing: border-box;
+			.modalPoster {
+				width: 50%;
+				height: 100%;
+				display: flex;
+				flex-direction: row;
+				justify-content: center;
+				align-items: flex-start;
+				img {
+					width: 300px;
+					margin-top: 40px;
+				}
+			}
+			.modal-movie-info {
+				width: 50%;
+				height: 60%;
+				padding-right: 30px;
+				box-sizing: border-box;
+				display: flex;
+				flex-direction: column;
+				justify-content: flex-start;
+				align-items: flex-start;
+				h4 {
+					font-size: 30px;
+					font-weight: 500;
+					line-height: 1.4;
+					color: $color_27;
+					margin: 0;
+				}
+				p {
+					font-size: 14px;
+					font-weight: 300;
+					color: $color_4;
+					margin-top: 10px;
+				}
+				.more-info {
+					position: absolute;
+					top: 358px;
+					padding-right: 30px;
+					box-sizing: border-box;
+					span {
+						font-size: 14px;
+						font-weight: 300;
+						line-height: 1.8;
+						color: $color_25;
+						padding-right: 40px;
+					}
+					h5 {
+						margin-top: 10px;
+						margin-bottom: 0;
+						font-weight: 400;
+						text-transform: uppercase;
+						font-size: 16px;
+						color: $color_27;
+					}
+					p {
+						color: $color_25;
+						margin-top: 5px;
+					}
+				}
+			}
+		}
+	}
 }
 .hide {
-  display: none;
-  }
-.margin{
-  padding-top: 140px;
-  
+	display: none !important;
 }
-.title-1{
-  margin: 24px;
-  text-shadow: 1px 1px #666, 2px 2px #86D6D3, 3px 3px #666, 4px 4px #86D6D3;
-  color:#2F4F4F;
-  float: left;
-
-
+.hide-scroll {
+	height: 80vh;
+	overflow: hidden !important;
 }
-
-  .show {
-  padding-top: 50px;
-   }
-
-   .active {
-    display: block;
-   }
-   
-      header{
-        position: fixed;
-        width: 100%;
-        height: 95px;
-        background-color:white;
-        display: flex;
-        flex-direction: row;
-        
-            .search{
-              width: 24px;
-              height: 24px;
-              margin: 32px 0px 32px 48px;
-            }
-            input{
-              text-align: left;
-              font-size: 24px;
-              box-sizing: border-box;
-              width: 50%;
-              height: 100%;
-              text-indent: 16px;
-              outline: none;
-              border: none;
-              text-shadow: 10px 8px #ccf, -10px 12px #fcf, -8px -12px #cfc, 12px -5px #fc9;
-              color: rgb(65, 61, 61);
-              
-              
-            }
-            .nav-menu{
-              width: 20%;
-              text-align: center;
-              align-items: center;
-              display: none;
-              @media only screen and (max-width:600px){
-               display: block;
-                }
-                   .fa-bars{
-                     margin: 32px auto;
-                     font-size: 24px;
-                     color: grey;
-                   }
-              
-            }
-            
-            }
-            .main{
-              @media only screen and (max-width:600px){
-               position: relative;
-              }    
-              
-              
-              .banner{
-                width: calc(100% - 90px);
-                height: 475px;
-                background-image: url("../images/assets/batman.jpg");
-                background-color: white;
-                float: right;
-                
-                @media only screen and (max-width:600px){
-                  height: 150px;
-                  background-image:none;
-                }   
-
-              
-                 h1{
-                   margin: 100px 40px;
-                   font-size: 40px;
-                   font-weight: bold;
-                   text-shadow: 1px 1px #666, 2px 2px #86D6D3, 3px 3px #666, 4px 4px #86D6D3;
-                   color:#2F4F4F;
-                    @media only screen and (max-width:600px){
-                      display:none;
-                      
-                  }
-                 }
-                }
-                 aside{
-                  margin-top: 95px;
-                  width: 90px;
-                  background-color: white;
-                  position:fixed;
-                  @media only screen and (max-width:600px){
-                    width: 100%;
-                    position:absolute;
-                   }
-                  
-                     .menu{
-                        text-align: center;
-                        align-items: center;
-                        @media only screen and (max-width:600px){
-                          width: 100%;
-                           display: flex;
-                                flex-direction: row;
-                                justify-content: space-between;
-                                background-color:rgb(201, 198, 207); 
-                                text-align: center;
-                                
-                         }
-                           .option{
-                              color: rgb(13, 13, 53);
-                              background-color:white;
-                              font-weight: bold;
-                              font-size: 12px;
-                              width: 100%;
-                              height: 95px;
-                              display: flex;
-                              justify-content: center;
-                              align-items: center;
-                              flex-wrap: wrap;
-                              border-bottom: 0.3px solid grey;
-                              @media only screen and (max-width:600px){
-                                width: 25%;
-                                height: 150px;
-                                margin: 0 ;
-                                border: 0.3px solid rgb(14, 0, 0);
-                                &:hover{
-                                  color:rgb(104, 29, 29);
-                                  background-color:hsla(180, 18%, 77%, 0.308);
-                                   }
-                                
-                               }
-                                       .img-icon{
-                                           width: 24px;
-                                           margin:15% 30%;
-                                           display: block;
-                                           @media only screen and (max-width:600px){
-                                            width: 30%;
-                                            margin: 16px auto;
-                                           }
-                                           }
-                                           &:hover{
-                                           color: #000000;
-                                           background-color:  hsla(180, 18%, 77%, 0.308);
-                                            }
-                                        }
-                                    }
-                              }
-                        }
-                  
-                        
-                  }
-                  .wrapper{
-
-                    width: calc(100% - 90px);
-                    float: right;
-                    background-color: hsla(180, 18%, 77%, 0.308);
-                    @media only screen and (max-width:600px){
-                     width: 100%;
-                    }
-                          
-                 .content-section-title{
-                          width: 100%;
-                          height: 80px;
-                          text-align: baseline;
-                          margin-top: 24px;    
-                          
-                               .title-section{ 
-                                text-align:left;
-                                margin-left: 48px;
-                                font-size: 24px;
-                                font-weight: bold;
-                                text-shadow: 1px 1px #666, 2px 2px #86D6D3, 3px 3px #666, 4px 4px #86D6D3;
-                                color:#2F4F4F;
-                                display: inline-block;
-                               }
-                               .movies-link{
-                                text-align: center;
-                                font-size: 16px;
-                                margin-left: 70%;
-                                margin-right: 8px;
-                                font-weight: bold;
-                                transition: transform 0.5s;
-                                color: rgb(49, 34, 63);
-                                 &:hover{
-                                color: rgb(175, 138, 16);
-                                text-shadow: #2F4F4F 1px;
-                                       }
-                                       .result{
-                                        padding-left: 4px;
-                                      }
-                                
-                                 
-                               }
-                              }
-                              .movies-list{
-                                width: 100%;
-                                height: 400px;
-                                margin: 24 auto;
-                                display: flex;
-                                       .movies-item{
-                                           width: 22%;
-                                           margin: 0 1.5%;
-                                           height: 75%;
-                                           flex-direction: row;
-                                           justify-content: space-between;
-                                           background-color:hsla(180, 18%, 77%, 0.308);
-                                          
-                                                    .movie-img{
-                                                      width: 100%;
-                                                      transition: transform 0.5s;
-                                                      &:hover{
-                                                      transform: scale(1.1);
-                                                    }
-                                                      }
-                                                      
-                                                    }
-                                                        .title{
-                                                         margin-top: 32px; 
-                                                         color: rgb(80, 80, 114);
-                                                         text-align: center;
-                                                         font-size: 12px;
-                                                         font-weight: bold;
-                                                         transition: transform 0.5s;
-                                                         &:hover{
-                                                         color: rgb(172, 180, 101);
-                                                         transform: scale(1.1)
-                                                          
-                                                         }
-                                                         
-                                                        }   
-                                                         
-                   
-                                                   }
-                                                   .btn-more {
-                                                    margin: 2% 40%;
-                                                    padding: 0 16px;
-                                                    border-radius: 2px;
-                                                    background-color: #018786;
-                                                    box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2),
-                                                      0 2px 2px 0 rgba(0, 0, 0, 0.14),
-                                                      0 1px 5px 0 rgba(0, 0, 0, 0.12);
-                                                    color: #fff;
-                                                    transition: background-color 15ms linear,
-                                                      box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1);
-                                                  
-                                                    height: 36px;
-                                                    line-height: 2.25rem;
-                                                    font-family: Roboto, sans-serif;
-                                                    font-size: 0.875rem;
-                                                    font-weight: 500;
-                                                    letter-spacing: 0.06em;
-                                                    text-transform: uppercase;
-                                                  }
-                                                  
-                                                  .btn-more:hover, .btn-more:focus {
-                                                    box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.2),
-                                                      0 4px 5px 0 rgba(0, 0, 0, 0.14),
-                                                      0 1px 10px 0 rgba(0, 0, 0, 0.12);
-                                                    background-color: #159090;
-                                                  }
-                                                  
-                                                  .btn-more:active {
-                                                    box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2),
-                                                      0 8px 10px 1px rgba(0, 0, 0, 0.14),
-                                                      0 3px 14px 2px rgba(0, 0, 0, 0.12);
-                                                    background-color: #61b4b3;
-                                                  }
-
-                                                   }
-                                                  
-                                             
-                                                   
-                                              
-                                         
-                                         
-                                  
-                                
+.spinner {
+	width: 32px;
+	height: 32px;
+	border-radius: 50%;
+	display: block;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	z-index: 32;
+	background-color: transparent;
+	border-top: 5px solid $color_4;
+	border-right: 5px solid $color_4;
+	border-bottom: 5px solid $color_4;
+	border-left: 5px solid $color_4;
+	animation-iteration-count: infinite;
+	animation-timing-function: linear;
+	animation-duration: 0.8s;
+	animation-name: spinner-loading;
+	&:after {
+		width: 32px;
+		height: 32px;
+		border-radius: 50%;
+		display: block;
+		position: fixed;
+		top: 50%;
+		left: 50%;
+		z-index: 32;
+	}
+}
+@keyframes spinner-loading {
+	0% {
+		transform: rotate(0deg);
+	}
+	to {
+	
+		transform: rotate(1turn);
+	}
+}
