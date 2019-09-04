@@ -73,6 +73,9 @@ const clear  = () => {
     total.classList.remove("hide")
 
 }
+const searchIcon = () => {
+    search();
+}
 
 const search = () => {
     clear();

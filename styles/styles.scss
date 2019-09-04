@@ -1,44 +1,18 @@
 @import "../styles/reset.css";
 
- //colors
-$color_0: rgb(201, 198, 207);
-$color_1: rgb(14, 0, 0);
-$color_2: rgb(104, 29, 29);
-$color_3: rgb(186, 207, 207);
-$color_4: rgb(255, 255, 255);
-$color_5: rgb(237, 229, 248);
-$color_6: rgb(102, 102, 102);
-$color_7: rgb(134, 214, 211);
-$color_8: rgb(47, 79, 79);
-$color_9: rgb(204, 204, 255);
-$color_10: rgb(255, 204, 255);
-$color_11: rgb(204, 255, 204);
-$color_12: rgb(255, 204, 153);
-$color_13: rgb(65, 61, 61);
-$color_14: rgb(128, 128, 128);
-$color_15: rgb(13, 13, 53);
-$color_16: rgb(0, 0, 0);
-$color_17: rgb(80, 80, 114);
-$color_18: rgb(110, 9, 102);
-$color_19: rgb(1, 135, 134);
-$color_20: rgb(21, 144, 144);
-$color_21: rgb(97, 180, 179);
-$color_22: rgb(49, 34, 63);
-$color_23: rgb(175, 138, 16);
-$color_24: rgb(172, 180, 101);
-$color_25: rgb(8, 28, 36);
-$color_26: rgb(117, 119, 112);
-$color_27: rgb(218, 115, 20);
+@import "../styles/variables.scss";
 
-//fonts
-$font_0: "Roboto";
-$font_1: "sans-serif !important";
-$font_2: "Roboto";
-$font_3: "sans-serif";
+@mixin flexbox ($flexDirection, $justifyContent, $alignItems){
+    display:flex;
+    flex-direction: $flexDirection;
+    justify-content:$justifyContent;
+    align-items:$alignItems;
+}
 
-//urls
-$url_0: url("../images/bat_flying_by_paci.gif");
-$url_1: url("../images/assets/batman.jpg");
+@mixin borderBox(){
+    box-sizing: border-box;
+}
+
 
 body {
 	background-color: $color_4;
@@ -96,23 +70,23 @@ body {
 			text-shadow: 10px 8px $color_9, -10px 12px $color_10, -8px -12px $color_11, 12px -5px $color_12;
 			color: $color_13;
 		}
-		.nav-menu {
-			width: 20%;
-			text-align: center;
-			align-items: center;
-			display: none;
+			
 			.fa-bars {
+				width: 20%;
+			    text-align: center;
+			    align-items: center;
+			    display: none;
 				margin: 32px auto;
-				font-size: 24px;
-        color: $color_14;
-        &:hover{
-          .aside{
-            display:block;
-          }
-        }
+				font-size: 32px;
+                color: $color_14;
+             &:hover{
+                 .aside{
+                    display:block;
+                   }
+                }
 			}
 		}
-	}
+	
 	.main {
 		.banner {
 			width: calc(100% - 90px);
@@ -162,75 +136,6 @@ body {
 		}
 	}
 }
-@media only screen and(max-width: 600px) {
-	body {
-    .header{
-      .input{
-        font-size: 16px;
-      }
-      width: 600px;
-        .input{
-          font-size: 16px;
-        }
-    }
-   .nav-menu {
-     .fa-bars{
-      display: block;
-     }
-     
-      
-		}
-		.main {
-			position: relative;
-			.banner {
-				height: 150px;
-				background-image: none;
-				h1 {
-					display: none;
-				}
-      }
-      
-			aside {
-				width: 100%;
-        position: absolute;
-				.menu {
-					width: 100%;
-					display: flex;
-					flex-direction: row;
-					justify-content: space-between;
-					background-color: $color_0;
-					text-align: center;
-					.option {
-						width: 25%;
-						height: 150px;
-						margin: 0;
-						border: 0.3px solid $color_1;
-						&:hover {
-							color: $color_2;
-              background-color: $color_3;
-              
-						}
-						.img-icon {
-							width: 30%;
-							margin: 16px auto;
-						}
-					}
-				}
-			}
-    }
-    .wrapper {
-      margin:0;
-      width: 100%;
-    }
-    .total {
-      width: 100%;
-      margin-top: 240px;
-    }
-    
-  }
-		
-	}
-	
 .total {
 	width: calc(100% - 90px);
 	float: right;
@@ -356,12 +261,12 @@ body {
 		margin: 24 auto;
 		display: flex;
 		.movies-item {
-			width: 22%;
+			width:22%;
 			margin: 0 1.5%;
 			height: 75%;
 			flex-direction: row;
 			justify-content: space-between;
-			background-color: $color_3;
+			
 			.movie-img {
 				width: 100%;
 				transition: transform 0.5s;
@@ -384,6 +289,7 @@ body {
 		}
 	}
 }
+ 
 .modal {
 	width: 100%;
 	height: 100vh;
@@ -421,23 +327,18 @@ body {
 			}
 		}
 		.modal-info {
-			display: flex;
-			flex-direction: row;
-			justify-content: flex-start;
-			align-items: flex-start;
-			flex-wrap: wrap;
+			@include flexbox(row, flex-start, flex-start);
+			flex-wrap: wrap;  
+			
 		}
 		.close {
-			width: 40px;
-			height: 40px;
-			display: flex;
-			flex-direction: row;
-			justify-content: center;
-			align-items: center;
-			position: absolute;
-			top: 0;
-			right: 0;
-			cursor: pointer;
+			width:40px;
+            height: 40px;
+            @include flexbox(row, center, center);
+            position:absolute;
+            top:0;
+            right:0;
+            cursor:pointer;
 			i {
 				width: 20px;
 				height: 20px;
@@ -448,37 +349,31 @@ body {
 			}
 		}
 		.content-modal-info {
-			width: 100%;
-			height: 100%;
-			position: absolute;
-			top: 0;
-			left: 0;
-			display: flex;
-			flex-direction: row;
-			justify-content: center;
-			align-items: center;
-			box-sizing: border-box;
-			.modalPoster {
-				width: 50%;
+			width:100%;
+            height:100%;
+            position:absolute;
+            top:0;
+            left:0;
+             @include flexbox(row, center, center);
+             @include borderBox();
+
+            .modalPoster {
+				width:50%;
 				height: 100%;
-				display: flex;
-				flex-direction: row;
-				justify-content: center;
-				align-items: flex-start;
+				@include flexbox(row, center, flex-start);
 				img {
 					width: 300px;
 					margin-top: 40px;
 				}
 			}
 			.modal-movie-info {
-				width: 50%;
-				height: 60%;
-				padding-right: 30px;
-				box-sizing: border-box;
-				display: flex;
-				flex-direction: column;
-				justify-content: flex-start;
-				align-items: flex-start;
+				width:50%;
+                height: 60%;
+                padding-right: 30px;
+                 @include borderBox();
+                 @include flexbox(column, flex-start, flex-start);
+
+				
 				h4 {
 					font-size: 30px;
 					font-weight: 500;
@@ -494,9 +389,11 @@ body {
 				}
 				.more-info {
 					position: absolute;
-					top: 358px;
-					padding-right: 30px;
-					box-sizing: border-box;
+                    top: 358px;
+                    padding-right: 30px;
+                    @include borderBox();
+
+					
 					span {
 						font-size: 14px;
 						font-weight: 300;
@@ -566,3 +463,175 @@ body {
 		transform: rotate(1turn);
 	}
 }
+@media only screen and(max-width: 600px) {
+	body {
+    .header{
+      .input{
+        font-size: 16px;
+      }
+      width: 600px;
+        .input{
+          font-size: 16px;
+        }
+    }
+     .fa-bars{
+	  display: block;
+	 
+     }
+     
+      
+		.main {
+			position: relative;
+			.banner {
+				height: 150px;
+				background-image: none;
+				h1 {
+					display: none;
+				}
+      }
+      
+			aside {
+				width: 100%;
+                position: absolute;
+				.menu {
+					width: 100%;
+					display: flex;
+					flex-direction: row;
+					justify-content: space-between;
+					background-color: $color_0;
+					text-align: center;
+					.option {
+						width: 25%;
+						height: 150px;
+						margin: 0;
+						border: 0.3px solid $color_1;
+						&:hover {
+							color: $color_2;
+                            background-color: $color_3;
+              
+						}
+						.img-icon {
+							width: 30%;
+							margin: 16px auto;
+						}
+					}
+				}
+			}
+    }
+    .wrapper {
+         margin:0;
+		 width: 100%;
+		 
+		          
+			 }  
+			
+    .total {
+      width: 100%;
+      margin-top: 240px;
+	}
+	.modal{
+		.contentModal{
+				width: 100%;
+				height: 700px;
+				margin: 0;
+		
+				.modal-header{
+					height: 350px;
+					position: relative;
+					background-size: cover;
+					background-repeat: no-repeat;
+					background-position: 50% 50%;    
+				}
+		
+				.modal-header:before{
+					content: "";
+					display: block;
+					position: absolute;
+					top: 0;
+					left: 0;
+					z-index: 0;
+					width: 100%;
+					height: 100%;
+					opacity: 0.85;    
+				}
+		
+				.modal-info{
+					@include flexbox(row, flex-start, flex-start);
+					flex-wrap: wrap;  
+				}
+		
+				.close{
+					width:40px;
+					height: 40px;
+					@include flexbox(row, center, center);
+					position:absolute;
+					top:0;
+					right:0;
+					cursor:pointer;
+		
+					i{
+						width:20px;
+						height: 20px;
+		
+					}
+				}
+		       .content-modal-info{
+					width:100%;
+					height:100%;
+					position:absolute;
+					top:0;
+					left:0;
+					@include flexbox(row, center, center);
+					@include borderBox();
+		
+					.modalPoster{
+						display:none;
+					}
+		
+					.modal-movie-info{
+						width:100%;
+						height: 60%;
+						padding: 20px;
+						@include borderBox();
+						@include flexbox(column, flex-start, center);
+		
+						h4{
+							font-size: 13px;
+							font-weight: 300;
+							line-height: 1.8;
+							margin:0;
+		
+						}
+		
+						p{
+							font-size: 14px;
+							font-weight: 300;
+							margin-top: 20px;
+						}
+						
+						.more-info{
+		
+							position: absolute;
+							top: 358px;
+							padding-right: 30px;
+							@include borderBox();
+		
+							span{
+								font-size: 14px;
+								font-weight: 300;
+								line-height: 1.8;
+							}
+		
+							h5{
+								margin-top: 20px;
+								font-size: 14px; 
+							}
+						}
+					}
+				}
+			}    
+		}
+	}
+}
+		
+	
