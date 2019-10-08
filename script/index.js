@@ -62,6 +62,7 @@ const elements = (movies,container,category) =>{
 container.appendChild(li);
 
 })
+/*Las funciones "create" y "elements", además de tener nombres poco descriptivos, son practicamente iguales. Se podría hacer una única función agregando un parámetro más que sea la clase que se le aplica al li.*/
 
 } 
 const clear  = () => {
@@ -76,7 +77,7 @@ const clear  = () => {
 const searchIcon = () => {
     search();
 }
-
+/*Se podría haber asignado directamente la función search() al onclick del elemento en html, y así evitar crear una función que solo llama a otra.*/
 const search = () => {
     clear();
     const search = document.getElementById("search")
@@ -135,7 +136,7 @@ const nowfive = () => {
         const container = document.getElementById("movies-list-4")
         container.innerHTML=""
 }
-
+/*Debería crearse una función que reciba por parámetros los datos necesarios para poder ser reutilizada con todas las categorías y así evitar repetir el mismo bloque de código con cada una.*/
 
 
 const selectCategory = (category) => {
@@ -240,12 +241,14 @@ const createModal = e =>{
         })
 
 };
-
+/*La función "createModal" contiene funciones (marcadas arriba con *) que podrían ser creadas afuera y ser invocadas dentro de ésta.*/
 const closeModal = () =>{
     const printModal = document.querySelector('.modal');
     printModal.remove();
 
     const returnScroll = () => content.classList.remove('hide-scroll');
+    /*El nodo content no es global, por la tanto no tiene alcance dentro de esta función y, al cerrar el modal, éste no se oculta y empuja el header hacia abajo.
+    No es necesario crear una función solo para agregarle una clase a un elemento, menos si se declara e invoca dentro de otra.*/
     returnScroll();
     
     
